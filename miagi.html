@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>eMagazine Miagi</title>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+            @import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;700&display=swap');
+
+        /* Reset & cấu hình chung */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Fredoka', sans-serif;
+            background: linear-gradient(to bottom right, #f9f9f9, #e0f2ff);
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* Navigation */
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            padding: 1rem;
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 999;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #111;
+            font-weight: bold;
+        }
+
+        /* Header Section */
+        header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2rem 4rem;
+    background: linear-gradient(135deg, #ff6b6b 0%, #1e90ff 100%);
+    color: white;
+    height: 50vh;
+    flex-wrap: wrap;
+}
+
+.header-left-group {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    transform: translateX(-40px); /* dịch sang trái */
+}
+
+.header-left img {
+    width: 180px; /* Đảm bảo tất cả ảnh có cùng kích thước */
+    height: auto;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+    transition: transform 0.3s ease;
+}
+
+/* Căn giữa ảnh chính */
+.img-center {
+    transform: scale(1.1); /* Phóng to nhẹ */
+    z-index: 2;
+}
+
+/* Ảnh bên trái */
+.img-left {
+ 
+    transform: rotate(-8deg) translate(-10px, 10px); /* Dịch sang trái một chút */
+    z-index: 1;
+}
+
+/* Ảnh bên phải */
+.img-right {
+    transform: rotate(8deg) translate(10px, 10px); /* Dịch sang phải một chút */
+    z-index: 1;
+}
+
+        .header-right {
+            max-width: 600px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 1rem;
+            padding: 1rem;
+            margin-right: 100px;
+        }
+
+        .header-right h1 {
+            font-size: 3rem;
+            text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .header-right p {
+            font-size: 1.2rem;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Section chung */
+        section {
+            padding: 3rem 2rem;
+        }
+
+        .section-card {
+            background: #fff;
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 700px;
+            margin: 0 auto 2rem;
+        }
+
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            text-align: center;
+            color: #222;
+        }
+
+        /* Team Section */
+        #team {
+            padding: 3rem 2rem;
+            text-align: center;
+            background: linear-gradient(to right, #fdfbfb, #ebedee);
+        }
+
+        #team h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            color: #222;
+        }
+
+        .team {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2rem;
+        }
+
+        .member {
+            background: #fff;
+            border-radius: 16px;
+            padding: 1.5rem;
+            width: 200px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        }
+
+        .member:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+        }
+
+        .member img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 12px;
+            margin-bottom: 1rem;
+        }
+
+        .member h4 {
+            margin: 0.5rem 0 0.2rem;
+            color: #ff4c4c;
+            font-size: 1.2rem;
+        }
+
+        .member p {
+            font-size: 0.95rem;
+            color: #666;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 2rem;
+            font-size: 0.9rem;
+            color: #777;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                height: auto;
+                padding: 2rem;
+            }
+
+            .header-left,
+            .header-right {
+                width: 100%;
+                text-align: center;
+            }
+
+            .header-left img {
+                width: 250px;
+            }
+
+            .header-right h1 {
+                font-size: 2.5rem;
+            }
+
+            .header-right p {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header với ảnh và chữ chia 2 cột -->
+    <header>
+        <div class="header-left-group">
+            <div class="header-left img-left">
+                <img src="./img/miagi1.jpg" alt="Mèo lầy Miagi">
+            </div>
+            <div class="header-left img-center">
+                <img src="./img/miagi3.jpg" alt="Mèo lầy Miagi">
+            </div>
+            <div class="header-left img-right">
+                <img src="./img/miagi2.jpg" alt="Mèo lầy Miagi">
+            </div>
+        </div>
+    
+        <div class="header-right">
+            <h1>MIAGI SOLUTION</h1>
+            <p>Keep Smiling and Moving Forward</p>
+        </div>
+        </header>
+    <!-- Navigation -->
+    <nav>
+        <a href="#">Giới thiệu</a>
+        <a href="#">Đội ngũ</a>
+        <a href="#">Liên hệ</a>
+    </nav>
+    <!-- Phần Giới thiệu & Dự án -->
+    <section>
+        <div class="section-card">
+            <h2>🥑 Về Miagi</h2>
+            <p>
+                Được thành lập vào năm 2019
+                <br>
+            </p>
+            Miagi Solution là công ty cung cấp dịch vụ gia công phần mềm và giải pháp phát triển phần mềm (Website/Mobile
+            Application) cho các doanh nghiệp tại thị trường Nhật Bản. Với 70% nguồn nhân lực trẻ, chuyên nghiệp và nhiệt huyết
+            trong lĩnh vực Công nghệ thông tin, chúng tôi tự hào và tự tin mang đến những giá trị tốt nhất cho khách hàng, từng bước
+            góp phần thúc đẩy ngành công nghiệp công nghệ Việt Nam.
+        </div>
+       
+    </section>
+    <!-- Phần Đội ngũ -->
+    <section id="team" class="fade-section">
+        <h2>Teams của chúng tôi</h2>
+        <div class="team">
+            <div class="member">
+                <img src="./img/khai.jpg" alt="CEO">
+                <h4>Khải " Tóc không dài "</h4>
+                <p>DEV</p>
+            </div>
+            <div class="member">
+                <img src="./img/thuvtk.png" alt="CTO">
+                <h4>Thu VTK</h4>
+                <p>Comtor</p>
+            </div>
+            <div class="member">
+                <img src="./img/diep.jpg" alt="CTO">
+                <h4>Diệp " lục "</h4>
+                <p>Comtor</p>
+            </div>
+            <div class="member">
+                <img src="./img/anhvq.png" alt="CTO">
+                <h4>Ánh VQ</h4>
+                <p>DEV</p>
+            </div>
+            <div class="member">
+                <img src="./img/sonvu.jpg" alt="CMO">
+                <h4>Sơn VV</h4>
+                <p>DEV</p>
+            </div>
+        </div>
+    </section>
+    <footer>
+        &copy; 2025 Miagi Inc. Làm với tình yêu và code. 🐱
+    </footer>
+</body>
+
+</html>
